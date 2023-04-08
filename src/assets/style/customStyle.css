@@ -1,0 +1,428 @@
+/* ------------------ui styles start------------------*/
+.border-3 {
+  border-width: 3px !important;
+}
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.flex-d-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.flex-d-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+.mb-2 {
+  margin-bottom: 1rem !important;
+}
+.mt-2 {
+  margin-bottom: 0.5rem;
+}
+.c-pointer {
+  cursor: pointer;
+}
+.bg-green {
+  background-color: #4ade80 !important;
+  color: black !important;
+}
+.bg-gray {
+  background-color: #1e293b !important;
+  border: 1px solid #33415599;
+}
+/* ------------------ui styles end------------------*/
+
+/* ------------------Login Form start------------------*/
+.login-container {
+  min-height: 80vh;
+}
+.admin-login-container {
+  margin-top: -120px;
+  min-height: 75vh;
+}
+
+/* ------------------Login Form end------------------*/
+
+/* ----------------Quizzes style start------------- */
+.checkbox-input {
+  accent-color: #4ade80;
+  border-color: red;
+}
+.flex-label {
+  display: flex;
+  align-items: center;
+}
+.flex-label span {
+  margin-left: 5px;
+}
+
+/* ----------------Quizzes style start------------- */
+
+/* -------Add Form and Edit From styles start-------*/
+.add-edit-form {
+  width: 50vw;
+}
+.add-edit-form label {
+  font-size: 17px;
+}
+.option-heading {
+  font-size: 17px;
+}
+.options-container label {
+  font-size: 16px;
+}
+.input-label {
+  margin: 1rem 0rem;
+  color: grey;
+}
+/* -------Add Form and Edit From styles end-------*/
+
+/* ---------Assingment modal style start--------- */
+.assignment-modal {
+  width: 50vw;
+  padding: 20px;
+  background-color: #111c2c;
+  border-radius: 5px;
+  top: 100px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s all ease;
+  animation: opening-modal 1s ease;
+  border: 3px dashed #626060;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0e1623ee;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 1000;
+  overflow: scroll;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.close-modal-btn {
+  width: 20px;
+  border-radius: 5px;
+}
+@keyframes opening-modal {
+  0% {
+    display: none;
+    top: -400px;
+  }
+  10% {
+    display: block;
+    opacity: 0;
+    top: -300px;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    top: 100px;
+  }
+}
+
+.assignment-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.assignment-input h2,
+.assignment-input label {
+  width: 30%;
+  font-size: 16px !important;
+}
+.assignment-input p {
+  width: 100%;
+  font-size: 14px;
+}
+.progress {
+  width: 100%;
+  height: 38px;
+  background-color: #1e293b;
+  border: 1px solid #33415599;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+  background: #7c3aed;
+  font-size: 17px;
+  color: white;
+}
+
+/* ---------Assingment modal style end--------- */
+
+/* ---------Loaders and Errors style start--------- */
+
+/* video loader start */
+
+.videos-container {
+  max-height: 572px;
+  background-color: #0a1121;
+  border-radius: 5px;
+}
+.video-list-container::-webkit-scrollbar {
+  width: 10px; /* Adjust scrollbar width */
+}
+
+.video-list-container::-webkit-scrollbar-thumb {
+  background-color: #292e3a;
+  border-radius: 10px;
+}
+
+/* Styles for non-webkit browsers */
+.video-list-container {
+  scrollbar-width: thin;
+  scrollbar-color: #292e3a #0a1121;
+}
+
+.video-list-container::-webkit-scrollbar-track {
+  background-color: #0a1121;
+}
+
+.active-video {
+  background: #292e3a !important;
+}
+
+.bg-animate {
+  animation: background-animation 1s linear infinite;
+}
+
+.color-animate {
+  animation: color-animation 1.5s linear infinite;
+}
+
+@keyframes background-animation {
+  0% {
+    background-color: #242b3959;
+  }
+
+  25% {
+    background-color: #333d5059;
+  }
+
+  75% {
+    background-color: #333d5059;
+  }
+
+  100% {
+    background-color: #242b3959;
+  }
+}
+
+@keyframes color-animation {
+  0% {
+    color: #cecece;
+  }
+
+  25% {
+    color: #929191;
+  }
+
+  75% {
+    color: #929191;
+  }
+
+  100% {
+    color: #cecece;
+  }
+}
+
+.video-loader {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.video-loader .spinner {
+  border: 4px solid #7e7d7da1;
+  border-top-color: #cacaca;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.heading-loader {
+  height: 20px;
+  border-radius: 5px;
+}
+
+.content-loader {
+  height: 150px;
+  border-radius: 5px;
+}
+
+/* videos loader start */
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.skeleton-item {
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.skeleton-item-sm {
+  height: 30px;
+}
+
+.skeleton-item-ex-sm {
+  height: 25px;
+  width: 50%;
+}
+
+/* video error */
+.bg-error {
+  background-color: #242b3959;
+}
+.videos-error {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Leaderboard Loader start*/
+.leaderboard-loader {
+  margin-top: 50px;
+}
+/* Leaderboard Loader end*/
+
+/* quiz Loader start*/
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.mr-1 {
+  margin-right: 0.5rem;
+}
+.mr-2 {
+  margin-right: 1rem;
+}
+.ml-1 {
+  margin-left: 0.5em;
+}
+.skeleton-button {
+  margin-top: 50px;
+  width: 150px;
+  height: 30px;
+  margin-left: auto;
+}
+.skeleton-button-right {
+  margin-top: 50px;
+  width: 150px;
+  height: 30px;
+  margin-right: auto;
+}
+.mt-0 {
+  margin-top: 0px;
+}
+/* quiz Loader end*/
+
+/* 404 not found Error start */
+.not-found {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #131a28;
+  border: 3px solid #383a3c;
+  border-style: dashed;
+  border-radius: 5px;
+}
+h2.not-found-message {
+  font-size: 20px;
+}
+.dahsboard-error {
+  height: 50vh;
+}
+/* 404 not found Error end */
+
+/* ---------Loaders and Errors style end--------- */
+
+/* Registration start*/
+.error-text {
+  color: red;
+}
+/* Registration end*/
+
+/* quiz page styles start*/
+.quiz-result-container {
+  width: 60%;
+  background: #1e293b5e;
+  border: 3px dashed #2b374b;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.quiz-result-container .container-title {
+  font-size: 18px;
+  margin: 0 auto;
+  margin-top: 5px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.quiz-result-table .table-text {
+  width: 30%;
+  border-right: 1px solid #34b5fd;
+}
+
+.redirectProgress {
+  width: 0%;
+  height: 5px;
+  background-color: #7c3aed;
+  animation: redirect 5s ease;
+  border-radius: 5px;
+}
+
+@keyframes redirect {
+  form {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+/* quiz page styles end*/

@@ -1,46 +1,27 @@
-# Getting Started with Create React App and Redux
+এই প্রোজেক্টের স্ট্রাকচারঃ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+    ১) USER (/) এবং ADMIN (/admin/login) এর লগিনের জন্য আলাদা আলাদা পেজ ব্যাবহার করা হয়েছে । যেন user এডমিনের login পেজ ব্যাবহার করে লগিন করতে না পারে এবং admin ইউজারের login পেজ ব্যাবহার করে লগিন করতে না পারে সেই বিষয়টি নিশ্চিত করা হয়েছে । এজন্য ./src/components/form ফোল্ডার  এ লগিন ফর্মগুলোর logic দেখলেই বুঝতে পারবেন ।
 
-## Available Scripts
+    ২) App.js ফাইলটিকে পরিচ্ছন্ন এবং রিউসেবিলইটি বৃদ্ধির জন্য সমস্ত রাউট এবং ভিউগুলো ./src/appRoutes.js ফাইলে রেজিস্টার করা হয়েছে ।
 
-In the project directory, you can run:
+    ৩) এই প্রজেক্টকে দুটি ভাগে ভাগ করা হয়েছে । যার জন্য অধিকাংশ ফোল্ডারকে দুটি সাবফোল্ডার "dashboard" ও "students" -এ ভাগ করা হয়েছে ।
 
-### `npm start`
+    ৪) সকল পেজগুলোকে ./src/pages ফোল্ডারে রাখা হয়েছে ।
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    ৫) ./src/features ফোল্ডারকে উপরে বর্ণিত দুই ভাগে ভাগ করা হয়নি । বরং বিভিন্ন ফিচার অনুযায়ী ভাগ করা হয়েছে এবং ফিচার অনুযায়ী প্রত্যেকটি api  ফাইলে সমস্ত লজিক রাখা হয়েছে ।  এবং নামকরন দেখলেই বুঝা যাবে যে সেই এন্ড-পয়েন্টের কাজ কি ।
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    ৬) সকল  ইউটিলিটি ফাংশনগুলোকে ./src/utils ফোল্ডারে রাখা হয়েছে ।
 
-### `npm test`
+    ৭) সকল কাস্টম হুকগুলোকে ./src/hooks ফোল্ডারে রাখা হয়েছে ।
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ৯) Add  ও Edit  করার জন্য একই ফর্মকে রি-ইউজ করা হয়েছে ।
 
-### `npm run build`
+এই প্রোজেক্টের কিছু কাস্টম ফিচারঃ
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ১) ইউজারের Assignment সাবমিট করার জন্য একটি মোডাল ব্যাবহার করা হয়েছে । যদি ইউজার অলরেডি Assignment সাবমিট করে তাহলে সেই মোডালে মার্কের status / mark দেখানো হয়েছে ।
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ২) ইউজার Quizzes সাবমিট করার সময় quiz পেজটিতে তাকে মার্ক দেখানো হয়েছে এবং 5 second পরে উসেরকে leaderboard এ রিডিরেক্ট করা হয়েছে সেখানে যদি ইউজার অলরেডি Quizzes সাবমিট এবং আবার পেজটি visit করে তাহলে মার্ক দেখানো হয়েছে ।
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ৩) এডমিন যখন Assignment এড বা এডিট করবে তখন শুধু যেই ভিডিওগুলোতে Assignment নেই সেগুলো ফিল্টার করে দেখানো হয়েছে ।
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+    -------------ধন্যবাদ
