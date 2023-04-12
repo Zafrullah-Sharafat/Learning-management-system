@@ -9,6 +9,7 @@ export const store = configureStore({
     activeVideo: videoSlice, //  provide recent or current active video
     auth: authSlice, // provide logged-in user
   },
+  devTools: !process.env.NODE_ENV === "production",
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
 });

@@ -16,7 +16,6 @@ export const videoApi = apiSlice.injectEndpoints({
         try {
           const { data: video } = await queryFulfilled;
           if (video.id) {
-            console.log(video.id);
             dispatch(addActiveVideoId(video.id));
             localStorage.setItem("activeVideo", video.id);
           }

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import QuizTable from "../../components/tables/dashboard/QuizTable";
 import DashboardError from "../../components/ui/Errors/DashboardError";
@@ -47,5 +48,12 @@ export default function Quizzes() {
     );
   }
 
-  return content;
+  return (
+    <>
+      <Helmet>
+        <title>All Quizzes</title>
+      </Helmet>
+      {content}
+    </>
+  );
 }

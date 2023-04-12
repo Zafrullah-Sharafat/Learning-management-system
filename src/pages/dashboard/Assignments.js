@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import AssignmentsTable from "../../components/tables/dashboard/AssignmentsTable";
 import DashboardError from "../../components/ui/Errors/DashboardError";
@@ -47,5 +48,12 @@ export default function Assignments() {
     );
   }
 
-  return content;
+  return (
+    <>
+      <Helmet>
+        <title>All Assignments</title>
+      </Helmet>
+      {content}
+    </>
+  );
 }

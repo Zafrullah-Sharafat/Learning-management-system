@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import AssignmentForm from "../../components/forms/dashboard/AssignmentForm";
 import {
@@ -32,14 +33,19 @@ export default function AddEditAssignment() {
   }, [assId]);
 
   return (
-    <div className="flex-d-column">
-      <h2 className="mt-2 mb-8 text-center text-3xl font-extrabold text-slate-100">
-        {assId ? "Edit Assignment" : "Add Assignment"}
-      </h2>
-      <AssignmentForm
-        formData={assignment || {}}
-        videos={videosWithNoAssignment(videos, assignments, assignment)}
-      />
-    </div>
+    <>
+      <Helmet>
+        <title>Manage Assignment</title>
+      </Helmet>
+      <div className="flex-d-column">
+        <h2 className="mt-2 mb-8 text-center text-3xl font-extrabold text-slate-100">
+          {assId ? "Edit Assignment" : "Add Assignment"}
+        </h2>
+        <AssignmentForm
+          formData={assignment || {}}
+          videos={videosWithNoAssignment(videos, assignments, assignment)}
+        />
+      </div>
+    </>
   );
 }

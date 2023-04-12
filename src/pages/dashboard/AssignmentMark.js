@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import AssignmentsMarkTable from "../../components/tables/dashboard/AssignmentsMarkTable";
 import DashboardError from "../../components/ui/Errors/DashboardError";
 import TableLoader from "../../components/ui/Loader/TableLoader";
@@ -42,5 +43,12 @@ export default function AssignmentMark() {
     );
   }
 
-  return content;
+  return (
+    <>
+      <Helmet>
+        <title>Submitted Assignments</title>
+      </Helmet>
+      {content}
+    </>
+  );
 }

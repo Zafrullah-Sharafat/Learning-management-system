@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import VideoForm from "../../components/forms/dashboard/VideoForm";
 import { useGetSingleVideoQuery } from "../../features/videos/videoApi";
@@ -21,11 +22,16 @@ export default function AddEditVideo() {
   }, [videoId, data]);
 
   return (
-    <div className="flex-d-column">
-      <h2 className="mt-2 mb-8 text-center text-3xl font-extrabold text-slate-100">
-        {data?.id ? "Edit Video" : "Add Video"}
-      </h2>
-      <VideoForm formData={data || {}} />
-    </div>
+    <>
+      <Helmet>
+        <title>Manage Video</title>
+      </Helmet>
+      <div className="flex-d-column">
+        <h2 className="mt-2 mb-8 text-center text-3xl font-extrabold text-slate-100">
+          {data?.id ? "Edit Video" : "Add Video"}
+        </h2>
+        <VideoForm formData={data || {}} />
+      </div>
+    </>
   );
 }

@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import StudentLoginForm from "../../components/forms/students/StudentLoginForm";
 
 export default function StudentLogin() {
   return (
     <>
+      <Helmet>
+        <title>Student Login</title>
+      </Helmet>
       <section className="bg-primary login-container grid place-items-center">
         <div className="mx-auto max-w-md lg:px-0">
           <div>

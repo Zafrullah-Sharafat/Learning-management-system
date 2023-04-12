@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import VideoTable from "../../components/tables/dashboard/VideoTable";
 import DashboardError from "../../components/ui/Errors/DashboardError";
@@ -47,5 +48,12 @@ export default function Videos() {
     );
   }
 
-  return content;
+  return (
+    <>
+      <Helmet>
+        <title>All Videos</title>
+      </Helmet>
+      {content}
+    </>
+  );
 }

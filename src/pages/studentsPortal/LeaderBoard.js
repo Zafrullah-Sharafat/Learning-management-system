@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
 import LeaderBoardTable from "../../components/tables/students/LeaderBoardTable";
 import SelfRankTable from "../../components/tables/students/SelfRankTable";
@@ -48,6 +49,9 @@ export default function LeaderBoard() {
   } else {
     content = (
       <>
+        <Helmet>
+          <title>LeaderBoard</title>
+        </Helmet>
         <SelfRankTable data={userRankOnBoard} />
         <LeaderBoardTable leaders={finalLeaderboard} userId={user?.id} />
       </>

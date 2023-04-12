@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Quizzes from "../../components/listItems/students/Quizzes";
@@ -53,6 +54,9 @@ export default function Quiz() {
   } else if (submittedQuiz?.id) {
     content = (
       <>
+        <Helmet>
+          <title>Quizzes {video?.title}</title>
+        </Helmet>
         <div className="mb-8">
           <h1 className="text-2xl font-bold">
             Quizzes for "Debounce Function in JavaScript - JavaScript Job
